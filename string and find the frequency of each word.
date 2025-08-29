@@ -1,0 +1,30 @@
+import java.util.Scanner;
+import java.util.HashSet;
+
+public class StringFrequency {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("ENTER THE SENTENCE: ");
+        String names = sc.nextLine();
+
+        String[] words = names.split(" ");
+
+        HashSet<String> set = new HashSet<>();
+        for (String w : words) {
+            set.add(w);
+        }
+
+        for (String w : set) {
+            int count = 0;
+            for (String x : words) {
+                if (w.equals(x)) {
+                    count++;
+                }
+            }
+            System.out.println(w + " -> " + count);
+        }
+
+        sc.close();
+    }
+}
