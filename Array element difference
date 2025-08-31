@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class Array_element_difference
 {
     public static void main(String []args)
