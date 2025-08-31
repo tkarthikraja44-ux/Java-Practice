@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Array_element_difference
+{
+    public static void main(String []args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter the size of Array");
+
+        int num = scanner.nextInt();
+        int [] arr = new int[num];
+        for(int i=0;i<num;i++)
+        {
+            arr[i]=scanner.nextInt();
+        }
+        for(int i=0;i<num-1;i++)
+        {
+            int diff=0;
+            diff = (arr[i+1]-arr[i]);
+            System.out.print(diff+" ");
+        }
+    }
+}
