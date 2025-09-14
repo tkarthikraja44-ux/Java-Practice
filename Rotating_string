@@ -1,0 +1,37 @@
+import java.util.*;
+class Rotating_string
+{
+	public static String leftRotating(String str, int num) {
+        int len = str.length();
+        num = num % len;
+        return str.substring(num) + str.substring(0, num);
+    }
+
+    public static String rightRotating(String str, int num) {
+        int len = str.length();
+        num = num % len; 
+        return str.substring(len - num) + str.substring(0, len - num);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+		
+        System.out.print("Enter the Name: ");
+        String s = scanner.nextLine();
+
+        System.out.print("Enter the number of rotate: ");
+        int num = scanner.nextInt();
+
+        System.out.print("Left Or Right [L/R]: ");
+        char ch = scanner.next().charAt(0);
+
+        if (ch == 'l' || ch == 'L') {
+            System.out.println("Left Rotated: " + leftRotating(s, num));
+        } else if (ch == 'r' || ch == 'R') {
+            System.out.println("Right Rotated: " + rightRotating(s, num));
+        } else {
+            System.out.println("Invalid choice!");
+        }
+		
+	}
+}
