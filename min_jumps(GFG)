@@ -1,0 +1,35 @@
+import java.util.*;
+class min_jumps
+{
+	public static void main(String[] args) 
+	{
+		Scanner scanner  = new Scanner(System.in);
+		int n = scanner.nextInt();
+		int[] num = new int[n];
+		for(int i=0;i<n;i++)
+		{
+			num[i] = scanner.nextInt();
+		}
+		if(num[0]==0)
+		{
+			System.out.print("-1");
+			return;
+		}
+		int j=0,f=0,c=0;
+		for(int i=0;i<n;i++)
+		{
+			f = Math.max(j,i+num[i]);
+			if(i==c)
+			{
+				j++;
+				c=f;
+				if(c>=n-1)
+				{
+					break;
+				}
+			}
+		}
+		System.out.print(j);
+		
+	}
+}
