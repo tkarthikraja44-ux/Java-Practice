@@ -1,0 +1,40 @@
+import java.util.*;
+class Main
+{
+    public static void main(String []args)
+    {
+        Scanner scanner = new Scanner(System.in);
+        
+        String num = scanner.nextLine();
+        char []narr =num.toCharArray();
+        int max=0;
+        for(int i=0;i<narr.length;i++)
+        {
+            int count = 1;
+            if(narr[i]=='0')
+            {
+                continue;
+            }
+            for(int j=i+1;j<narr.length;j++)
+            {
+                if(narr[i]==narr[j])
+                {
+                    count++;
+                    narr[j] = '0';
+                }
+            }
+            
+            if(count==3)
+            {
+                int digit = narr[i] - '0';
+                if(digit>max)
+                {
+                    max = digit;
+                }
+                
+            }
+        }
+        System.out.printf("%d %d %d",max,max,max);
+        
+    }
+}
