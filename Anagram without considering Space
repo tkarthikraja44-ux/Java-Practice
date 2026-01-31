@@ -1,0 +1,22 @@
+import java.util.*;
+
+class Main {
+    public static void main(String []args) {
+
+        Scanner scanner = new Scanner(System.in);
+        String words = scanner.nextLine();
+        String wordss = scanner.nextLine();
+
+        words = words.replaceAll("\\s+", "");
+        wordss = wordss.replaceAll("\\s+", "");
+
+        char[] word = words.toCharArray();
+        char[] wordd = wordss.toCharArray();
+        Arrays.sort(word);
+        Arrays.sort(wordd);
+        if(Arrays.equals(word,wordd))
+        {
+         System.out.print("yes");   
+        }
+    }
+}
