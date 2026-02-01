@@ -1,0 +1,32 @@
+/*"Second largest number in an alphanumeric string:
+Input 1:                     Input 2:                     Input 3:
+bdh83721hbd                 abc12321bca                   helloworld
+Op:                           Op:                            Op:
+7                               2                              -1"*/
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String alp = scanner.nextLine();
+        int largest = -1;
+        int secondLargest = -1;
+        for (int i = 0; i < alp.length(); i++) {
+            char ch = alp.charAt(i);
+            if (Character.isDigit(ch)) {
+                int digit = ch - '0';
+                if(digit>largest)
+                {
+                    secondLargest = largest;
+                    largest = digit;
+                }
+                else if(digit<largest && digit>secondLargest)
+                {
+                    secondLargest = digit;
+                }
+               
+            }
+        }
+        System.out.println(secondLargest);
+    }
+}
+ 
