@@ -1,0 +1,44 @@
+import java.util.*;
+class Main
+{
+    public static void main(String []args)
+    {
+        Scanner scanner = new Scanner(System.in);
+
+            String s = scanner.nextLine();
+            String t = scanner.nextLine();
+            if(s.length()!=t.length())
+            {
+                System.out.print("False");
+                return;
+            }
+            Map<Character,Character> map = new HashMap<>(); 
+            for(int i=0;i<s.length();i++)
+            {
+                char og = s.charAt(i);
+                char repl = t.charAt(i);
+                if(!map.containsKey(og))
+                {
+                    if(!map.containsValue(repl))
+                    {
+                        map.put(og,repl);
+                    }
+                    else
+                    {
+                        System.out.print("False");
+                        return;
+                    }
+                }
+                else
+                {
+                    char mapchar = map.get(og);
+                    if(mapchar!=repl)
+                    {
+                        System.out.print("False");
+                        return;
+                    }
+                }
+            }
+            System.out.print("True");
+    }
+}
