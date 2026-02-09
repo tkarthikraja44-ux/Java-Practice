@@ -1,0 +1,23 @@
+class Solution {
+    public int[] decompressRLElist(int[] nums) {
+        int size = 0;
+        for(int i=0;i<nums.length;i+=2)
+        {
+            size+=nums[i];
+        }
+        int []num = new int[size];
+        int k=0;
+        for(int i=0;i<nums.length;i+=2)
+        {
+            int sum=0;
+            int n = nums[i];
+
+            while(n>=1)
+            {
+                num[k++] = nums[i+1];
+                n--;
+            }
+        }
+        return num;
+    }
+}
