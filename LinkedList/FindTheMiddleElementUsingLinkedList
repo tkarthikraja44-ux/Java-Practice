@@ -1,0 +1,27 @@
+import java.util.LinkedList;
+class Main {
+  public static void main(String[] args) {
+      
+   LinkedList <Integer> nums = new LinkedList<>();
+   
+   nums.add(10);
+   nums.add(20);
+   nums.add(30);
+   nums.add(40);
+   nums.add(50);
+   nums.add(50);
+   
+   int n = nums.size();
+   
+   if(n%2==0)
+   {
+       int res = (n/2)-1;
+       int res1 = (n/2);
+       System.out.print(nums.get(res)+" "+nums.get(res1)+" ");
+   }
+   else{
+       int res=n/2;
+       System.out.print(nums.get(res));
+   }
+  }
+}
